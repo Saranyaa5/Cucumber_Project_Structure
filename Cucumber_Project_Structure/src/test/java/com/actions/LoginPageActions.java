@@ -15,12 +15,6 @@ public class LoginPageActions {
     LoginPageLocators loginPageLocators=null;
     String strUserName,strPassword;
     
-//    public LoginPageActions() {
-//    	
-//    	this.loginPageLocators=new LoginPageLocators();
-//    	
-//    	PageFactory.initElements(HelperClass.getDriver(), loginPageLocators);
-//    }
     public LoginPageActions() {
         loginPageLocators = new LoginPageLocators();
         PageFactory.initElements(HelperClass.getDriver(), loginPageLocators);
@@ -44,22 +38,24 @@ public class LoginPageActions {
     public void login() {
     	File file=new File("C:\\Users\\saran\\git\\Cucumber_Project_Structure\\Cucumber_Project_Structure\\src\\test\\resources\\testdata.properties");
     
-    	FileInputStream fileInput=null;
-    	try {
-    		fileInput=new FileInputStream(file);
-    	}
-    	catch(FileNotFoundException e){
-    		e.printStackTrace();
-    	}
-    	
-    	Properties prop=new Properties();
-    	
-    	try {
-    		prop.load(fileInput);
-    	}
-    	catch(IOException e) {
-    		e.printStackTrace();
-    	}
+    FileInputStream fileInput = null;
+    try {
+        fileInput = new FileInputStream(file);
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+        return; // Return early to prevent further issues if file is not found
+    }
+
+    Properties prop = new Properties();
+    
+    try {
+        prop.load(fileInput);
+        fileInput.close(); // Close the file input stream after loading properties
+    } catch (IOException e) {
+        e.printStackTrace();
+    
+}
+
     	
     	strUserName=prop.getProperty("username");
     	strPassword=prop.getProperty("password");
