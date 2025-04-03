@@ -15,12 +15,6 @@ public class LoginPageActions {
     LoginPageLocators loginPageLocators=null;
     String strUserName,strPassword;
     
-//    public LoginPageActions() {
-//    	
-//    	this.loginPageLocators=new LoginPageLocators();
-//    	
-//    	PageFactory.initElements(HelperClass.getDriver(), loginPageLocators);
-//    }
     public LoginPageActions() {
         loginPageLocators = new LoginPageLocators();
         PageFactory.initElements(HelperClass.getDriver(), loginPageLocators);
@@ -42,8 +36,7 @@ public class LoginPageActions {
     	loginPageLocators.login.click();
     }
     public void login() {
-    // Correct path retrieval
-    File file = new File(System.getProperty("user.dir") + "/src/test/resources/testdata.properties");
+    	File file=new File("C:\\Users\\saran\\git\\Cucumber_Project_Structure\\Cucumber_Project_Structure\\src\\test\\resources\\testdata.properties");
     
     FileInputStream fileInput = null;
     try {
@@ -60,7 +53,7 @@ public class LoginPageActions {
         fileInput.close(); // Close the file input stream after loading properties
     } catch (IOException e) {
         e.printStackTrace();
-    }
+    
 }
 
     	
