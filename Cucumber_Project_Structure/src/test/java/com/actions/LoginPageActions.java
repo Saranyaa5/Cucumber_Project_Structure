@@ -42,24 +42,27 @@ public class LoginPageActions {
     	loginPageLocators.login.click();
     }
     public void login() {
-    	File file=new File("C:\\Users\\saran\\eclipse-workspace\\Cucumber_Project_Structure\\src\\test\\resources\\testdata.properties");
+    // Correct path retrieval
+    File file = new File(System.getProperty("user.dir") + "/src/test/resources/testdata.properties");
     
-    	FileInputStream fileInput=null;
-    	try {
-    		fileInput=new FileInputStream(file);
-    	}
-    	catch(FileNotFoundException e){
-    		e.printStackTrace();
-    	}
-    	
-    	Properties prop=new Properties();
-    	
-    	try {
-    		prop.load(fileInput);
-    	}
-    	catch(IOException e) {
-    		e.printStackTrace();
-    	}
+    FileInputStream fileInput = null;
+    try {
+        fileInput = new FileInputStream(file);
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+        return; // Return early to prevent further issues if file is not found
+    }
+
+    Properties prop = new Properties();
+    
+    try {
+        prop.load(fileInput);
+        fileInput.close(); // Close the file input stream after loading properties
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
     	
     	strUserName=prop.getProperty("username");
     	strPassword=prop.getProperty("password");
