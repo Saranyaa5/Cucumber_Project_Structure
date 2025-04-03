@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.06 s -- in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.63 s <<< FAILURE! -- in TestSuite
+com.runner.runnerTestNG.runScenario["Login with valid credentials", "Login to HRM Application"](1) -- Time elapsed: 8.332 s <<< FAILURE!
+java.lang.NullPointerException: inStream parameter is null
+	at java.base/java.util.Objects.requireNonNull(Objects.java:259)
+	at java.base/java.util.Properties.load(Properties.java:408)
+	at com.actions.LoginPageActions.login(LoginPageActions.java:58)
+	at com.definitions.LoginPageDefinitions.goToHomePage(LoginPageDefinitions.java:26)
+	at ✽.User enters username and password(file:///C:/Users/saran/git/Cucumber_Project_Structure/Cucumber_Project_Structure/src/test/resources/features/LoginPage.feature:6)
+

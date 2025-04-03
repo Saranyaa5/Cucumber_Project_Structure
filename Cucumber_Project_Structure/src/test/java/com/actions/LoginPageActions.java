@@ -42,7 +42,7 @@ public class LoginPageActions {
     	loginPageLocators.login.click();
     }
     public void login() {
-    	File file=new File("C:\\Users\\saran\\eclipse-workspace\\Cucumber_Project_Structure\\src\\test\\resources\\testdata.properties");
+    	File file=new File("C:\\Users\\saran\\git\\Cucumber_Project_Structure\\Cucumber_Project_Structure\\src\\test\\resources\\testdata.properties");
     
     	FileInputStream fileInput=null;
     	try {
