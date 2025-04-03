@@ -1,0 +1,8 @@
+com\definitions\LoginPageDefinitions.class
+com\runner\runnerTestNG.class
+com\actions\HomePageActions.class
+com\actions\LoginPageActions.class
+com\definitions\Hooks.class
+com\pages\HomePageLocators.class
+com\pages\LoginPageLocators.class
+com\utilities\HelperClass.class
